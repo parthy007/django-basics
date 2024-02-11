@@ -1,1 +1,1 @@
-This is where the fucking static files are served for you !!!!
+This is where the static files are served for you !!!!
