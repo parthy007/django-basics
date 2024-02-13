@@ -1,3 +1,36 @@
 {% extends 'base.html' %} 
 {% block title %}Contact{% endblock title %} 
-{% block body %}this is the contact body{% endblock body %}
+{% block body %}
+    <div class="container-fluid px-0">
+        <img src="https://source.unsplash.com/random/1600x400/?contact,phone" class="d-block w-100" alt="...">
+        <h1 class="text-center my-3">Contact Us</h1>
+    </div>
+    <div class="container my-3">
+        <form class="row g-3" method="post" action="/contact">
+            {% csrf_token %}
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputName" class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" id="inputName">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" name="city" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" name="zip" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+    </div>
+{% endblock body %}
