@@ -7,3 +7,6 @@ class Contact(models.Model):
     address = models.CharField(max_length=12)
     city = models.CharField(max_length=122)
     zip = models.IntegerField()
+
+    def __str__(self):
+        return self.name
