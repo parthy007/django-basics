@@ -1,9 +1,11 @@
 from django.shortcuts import render, HttpResponse
 from Home.models import Contact
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
     return render(request,"index.html")
+
 def about(request):
     return render(request,"about.html")
 def services(request):
@@ -17,4 +19,5 @@ def contact(request):
         zip = request.POST.get('zip')
         contact = Contact(name=name, email=email, address=address, city=city, zip=zip)
         contact.save()
+        messages.success(request, "Your form is saved!!")
     return render(request,"contact.html")
